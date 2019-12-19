@@ -15,7 +15,7 @@ server.use('/api/auth', authRouter);
 server.use('/api/users', usersRouter);
 
 server.get('/', (req, res) => {
-  res.send("server is up");
+  res.status(200).json({ server: "server is up", dbemv: process.env.DB_ENV });
 });
 
 module.exports = server;
